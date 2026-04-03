@@ -1,14 +1,14 @@
 export const works = [
   {
-    id: 'fifty-anniversary-identity',
-    title: '50th Anniversary Identity',
-    year: '2024',
-    category: 'Brand',
+    id: 'gemini-image',
+    title: 'Generative Visual',
+    year: '2025',
+    category: 'Digital',
     client: '—',
     description:
-      'A commemorative brand identity developed for a milestone anniversary. The mark draws on classical typographic forms, balancing heritage with contemporary clarity.',
-    cover: '50周年 LOGO_03彩色版.jpg',
-    images: ['50周年 LOGO_03彩色版.jpg'],
+      'AI-assisted image generation exploring the boundary between algorithmic output and considered design direction.',
+    cover: 'Gemini_Generated_Image_379oy7379oy7379o-processed(lightpdf.com).png',
+    images: ['Gemini_Generated_Image_379oy7379oy7379o-processed(lightpdf.com).png'],
     type: 'image',
   },
   {
@@ -127,8 +127,8 @@ export const works = [
     client: '—',
     description:
       'Animated digital greeting card for the Dragon Boat Festival. Motion choreography references the rhythm of drumming and the sweep of the boat.',
-    cover: '2025 端午賀卡-中文版.mp4',
-    images: ['2025 端午賀卡-中文版.mp4'],
+    cover: 'Adobe Express - 2025 端午賀卡-中文版.mp4',
+    images: ['Adobe Express - 2025 端午賀卡-中文版.mp4'],
     type: 'video',
   },
   {
@@ -139,10 +139,10 @@ export const works = [
     client: '—',
     description:
       'Animated New Year greeting. Restrained colour palette and deliberate timing give the piece a contemplative quality appropriate to the season.',
-    cover: '新年-D版.mp4',
-    images: ['新年-D版.mp4'],
+    cover: '新年賀卡-網站resize.mp4',
+    images: ['新年賀卡-網站resize.mp4'],
     type: 'video',
   },
 ];
 
-export const categories = ['All', 'Brand', 'Packaging', 'Editorial', 'Motion'];
+export const categories = ['All', 'Brand', 'Packaging', 'Editorial', 'Digital', 'Motion'];

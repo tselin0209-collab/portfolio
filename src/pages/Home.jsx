@@ -4,7 +4,7 @@ import { works } from '../data/works';
 import styles from './Home.module.css';
 
 const SLIDE_DURATION = 8000;
-const FADE_DURATION  = 1000;
+const FADE_DURATION  = 2000;
 
 const slides = works.map((w) => ({ src: w.cover, type: w.type }));
 
