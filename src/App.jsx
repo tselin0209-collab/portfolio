@@ -5,14 +5,16 @@ import Home from './pages/Home';
 import Works from './pages/Works';
 import WorkDetail from './pages/WorkDetail';
 import About from './pages/About';
+import ClickSpark from './components/ClickSpark';
 
 function Layout() {
   const location = useLocation();
   const isHome = location.pathname === '/';
+  const isWorkDetail = /^\/works\/.+/.test(location.pathname);
 
   return (
     <div className="page-layout">
-      {!isHome && <Nav />}
+      {isWorkDetail && <Nav />}
       <main className="page-content">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -29,7 +31,15 @@ function Layout() {
 export default function App() {
   return (
     <BrowserRouter>
-      <Layout />
+      <ClickSpark
+        sparkColor='#fff'
+        sparkSize={10}
+        sparkRadius={15}
+        sparkCount={8}
+        duration={400}
+      >
+        <Layout />
+      </ClickSpark>
     </BrowserRouter>
   );
 }

@@ -1,7 +1,7 @@
 export const works = [
   {
-    id: 'gemini-image',
-    title: 'Generative Visual',
+    id: 'gemini-image-1',
+    title: 'Generative Visual I',
     year: '2025',
     category: 'Digital',
     client: '—',
@@ -12,15 +12,39 @@ export const works = [
     type: 'image',
   },
   {
-    id: 'brand-mark',
-    title: 'Brand Mark',
-    year: '2024',
-    category: 'Brand',
+    id: 'gemini-image-2',
+    title: 'Generative Visual II',
+    year: '2025',
+    category: 'Digital',
     client: '—',
     description:
-      'Primary logotype and visual identity system. Conceived with restraint — a single mark that operates across print, digital, and environmental applications.',
-    cover: 'master logo 04.jpg',
-    images: ['master logo 04.jpg'],
+      'AI-assisted image generation exploring the boundary between algorithmic output and considered design direction.',
+    cover: 'Gemini_Generated_Image_ilhyfjilhyfjilhy (1).png',
+    images: ['Gemini_Generated_Image_ilhyfjilhyfjilhy (1).png'],
+    type: 'image',
+  },
+  {
+    id: 'gemini-image-3',
+    title: 'Generative Visual III',
+    year: '2025',
+    category: 'Digital',
+    client: '—',
+    description:
+      'AI-assisted image generation exploring the boundary between algorithmic output and considered design direction.',
+    cover: 'Gemini_Generated_Image_pbszbmpbszbmpbsz-processed(lightpdf.com) (1).png',
+    images: ['Gemini_Generated_Image_pbszbmpbszbmpbsz-processed(lightpdf.com) (1).png'],
+    type: 'image',
+  },
+  {
+    id: 'gemini-image-4',
+    title: 'Generative Visual IV',
+    year: '2025',
+    category: 'Digital',
+    client: '—',
+    description:
+      'AI-assisted image generation exploring the boundary between algorithmic output and considered design direction.',
+    cover: 'Gemini_Generated_Image_y216pmy216pmy216 (1).png',
+    images: ['Gemini_Generated_Image_y216pmy216pmy216 (1).png'],
     type: 'image',
   },
   {
@@ -33,18 +57,6 @@ export const works = [
       'Brand mark development and application mockup. Logotype refined through iterative typographic studies balancing legibility and character.',
     cover: 'logo_C-2(O)_示意.jpg',
     images: ['logo_C-2(O)_示意.jpg'],
-    type: 'image',
-  },
-  {
-    id: 'product-series-as0649',
-    title: 'Product Series AS0649',
-    year: '2024',
-    category: 'Packaging',
-    client: '—',
-    description:
-      'Packaging design for a product series. Typography and structure maintain consistency across SKUs while allowing individual expression.',
-    cover: 'AS0649.jpg',
-    images: ['AS0649.jpg'],
     type: 'image',
   },
   {
@@ -84,30 +96,6 @@ export const works = [
     type: 'image',
   },
   {
-    id: 'stella-gift-packaging',
-    title: 'Stella Gift Packaging',
-    year: '2024',
-    category: 'Packaging',
-    client: '—',
-    description:
-      'Animated scene photography for a luxury PR gift set. Motion and composition designed to showcase material quality and gift experience.',
-    cover: '史黛拉盒商品情境gif_公關禮.gif',
-    images: ['史黛拉盒商品情境gif_公關禮.gif'],
-    type: 'image',
-  },
-  {
-    id: 'packaging-reveal',
-    title: 'Packaging Reveal',
-    year: '2024',
-    category: 'Packaging',
-    client: '—',
-    description:
-      'Unboxing detail photography documenting the reveal sequence. Interior surface, texture, and structure conceived as part of the overall experience.',
-    cover: '開蓋-02.jpg',
-    images: ['開蓋-02.jpg'],
-    type: 'image',
-  },
-  {
     id: 'carrefour-arts-magazine',
     title: 'Carrefour Arts Festival — Editorial',
     year: '2024',
@@ -118,6 +106,18 @@ export const works = [
     cover: '家樂福文化藝術季雜誌稿2.jpg',
     images: ['家樂福文化藝術季雜誌稿2.jpg'],
     type: 'image',
+  },
+  {
+    id: 'gift-box',
+    title: 'Gift Box',
+    year: '2024',
+    category: 'Packaging',
+    client: '—',
+    description:
+      'Animated scene photography for a gift packaging set. Motion and composition designed to showcase material quality and gift experience.',
+    cover: '禮盒-網站resize.mp4',
+    images: ['禮盒-網站resize.mp4'],
+    type: 'video',
   },
   {
     id: 'dragon-boat-festival-2025',
