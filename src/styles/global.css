@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+@font-face {
+  font-family: 'GenRyuMin';
+  src: url('/fonts/GenRyuMin2TW-EL.otf') format('opentype');
+  font-weight: 200;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GenRyuMin';
+  src: url('/fonts/GenRyuMin2TW-L.otf') format('opentype');
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GenRyuMin';
+  src: url('/fonts/GenRyuMin2TW-R.otf') format('opentype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GenRyuMin';
+  src: url('/fonts/GenRyuMin2TW-M.otf') format('opentype');
+  font-weight: 500;
+  font-display: swap;
+}
+
+/* ── CSS Variables ── */
+:root {
+  --c-black:      #000000;
+  --c-white:      #ffffff;
+  --c-grey-dark:  #333333;
+  --c-grey-mid:   #888888;
+  --c-grey-light: #f2f2f2;
+  --c-rule:       #dddddd;
+
+  /* 10-level type scale */
+  --fs-1:    9px;
+  --fs-2:   11px;
+  --fs-3:   13px;
+  --fs-4:   15px;
+  --fs-5:   18px;
+  --fs-6:   22px;
+  --fs-7:   28px;
+  --fs-8:   38px;
+  --fs-9:   52px;
+  --fs-10:  80px;
+
+  /* Semantic aliases */
+  --fs-xs:   var(--fs-1);
+  --fs-sm:   var(--fs-2);
+  --fs-base: var(--fs-3);
+  --fs-md:   var(--fs-4);
+  --fs-lg:   var(--fs-5);
+  --fs-xl:   var(--fs-7);
+  --fs-2xl:  var(--fs-9);
+  --fs-3xl:  var(--fs-10);
+
+  --font-latin: 'Lora', serif;
+  --font-cjk: 'GenRyuMin', 'Noto Serif TC', serif;
+  --font-serif: var(--font-latin);
+
+  --nav-height: 52px;
+  --page-pad: 40px;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-latin);
+  font-size: var(--fs-base);
+  color: var(--c-black);
+  background: var(--c-white);
+  min-height: 100vh;
+}
+
+/* CJK text gets the CJK font stack */
+:lang(zh), .cjk {
+  font-family: var(--font-cjk);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font-family: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* ── Layout ── */
+.page-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --page-pad: 20px;
+    --fs-10: 52px;
+    --fs-9:  36px;
+  }
+}

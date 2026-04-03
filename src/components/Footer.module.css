@@ -1,0 +1,20 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px var(--page-pad);
+  border-top: 1px solid var(--c-rule);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--c-grey-mid);
+  letter-spacing: 0.08em;
+}
+
+.footer a {
+  color: var(--c-grey-mid);
+  transition: color 0.2s ease;
+}
+
+.footer a:hover {
+  color: var(--c-black);
+}

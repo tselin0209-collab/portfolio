@@ -1,0 +1,133 @@
+.about {
+  padding: calc(var(--nav-height) + 40px) var(--page-pad) 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.rule {
+  height: 1px;
+  background: var(--c-rule);
+  margin-bottom: 56px;
+}
+
+/* Two-column layout */
+.layout {
+  display: grid;
+  grid-template-columns: 5fr 3fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* Left */
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.name {
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xl);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--c-black);
+}
+
+.bio {
+  font-family: var(--font-serif);
+  font-size: var(--fs-md);
+  font-weight: 400;
+  line-height: 1.85;
+  color: var(--c-grey-dark);
+  letter-spacing: 0.02em;
+  max-width: 520px;
+}
+
+.email {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  letter-spacing: 0.06em;
+  color: var(--c-grey-mid);
+  transition: color 0.2s ease;
+  display: inline-block;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--c-rule);
+}
+
+.email:hover {
+  color: var(--c-black);
+  border-bottom-color: var(--c-black);
+}
+
+/* Right */
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-top: 8px;
+}
+
+.section {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sectionLabel {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-grey-mid);
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.list li {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--c-grey-dark);
+  letter-spacing: 0.04em;
+}
+
+.sectionValue {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--c-grey-dark);
+  letter-spacing: 0.04em;
+}
+
+.contactLink {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--c-grey-dark);
+  letter-spacing: 0.04em;
+  transition: color 0.2s ease;
+}
+
+.contactLink:hover {
+  color: var(--c-black);
+}
+
+.divider {
+  height: 1px;
+  background: var(--c-rule);
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .name {
+    font-size: var(--fs-xl);
+  }
+}

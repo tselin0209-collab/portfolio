@@ -1,0 +1,148 @@
+export const works = [
+  {
+    id: 'fifty-anniversary-identity',
+    title: '50th Anniversary Identity',
+    year: '2024',
+    category: 'Brand',
+    client: '—',
+    description:
+      'A commemorative brand identity developed for a milestone anniversary. The mark draws on classical typographic forms, balancing heritage with contemporary clarity.',
+    cover: '50周年 LOGO_03彩色版.jpg',
+    images: ['50周年 LOGO_03彩色版.jpg'],
+    type: 'image',
+  },
+  {
+    id: 'brand-mark',
+    title: 'Brand Mark',
+    year: '2024',
+    category: 'Brand',
+    client: '—',
+    description:
+      'Primary logotype and visual identity system. Conceived with restraint — a single mark that operates across print, digital, and environmental applications.',
+    cover: 'master logo 04.jpg',
+    images: ['master logo 04.jpg'],
+    type: 'image',
+  },
+  {
+    id: 'logo-c2',
+    title: 'Logo C-2',
+    year: '2024',
+    category: 'Brand',
+    client: '—',
+    description:
+      'Brand mark development and application mockup. Logotype refined through iterative typographic studies balancing legibility and character.',
+    cover: 'logo_C-2(O)_示意.jpg',
+    images: ['logo_C-2(O)_示意.jpg'],
+    type: 'image',
+  },
+  {
+    id: 'product-series-as0649',
+    title: 'Product Series AS0649',
+    year: '2024',
+    category: 'Packaging',
+    client: '—',
+    description:
+      'Packaging design for a product series. Typography and structure maintain consistency across SKUs while allowing individual expression.',
+    cover: 'AS0649.jpg',
+    images: ['AS0649.jpg'],
+    type: 'image',
+  },
+  {
+    id: 'product-series-as1434',
+    title: 'Product Series AS1434',
+    year: '2024',
+    category: 'Packaging',
+    client: '—',
+    description:
+      'Continuation of the AS series. Refined grid system and material specification developed alongside the product development team.',
+    cover: 'AS1434 拷貝.jpg',
+    images: ['AS1434 拷貝.jpg'],
+    type: 'image',
+  },
+  {
+    id: 'product-series-as1467',
+    title: 'Product Series AS1467',
+    year: '2024',
+    category: 'Packaging',
+    client: '—',
+    description:
+      'New addition to the AS product series. Structural design and typographic hierarchy refined from previous iterations.',
+    cover: 'AS1467.jpg',
+    images: ['AS1467.jpg'],
+    type: 'image',
+  },
+  {
+    id: 'ats-9009x2-diagram',
+    title: 'ATS-9009X2 Diagram',
+    year: '2024',
+    category: 'Packaging',
+    client: '—',
+    description:
+      'Technical illustration and packaging diagram for a product release. Precision drawing with layered callouts communicating assembly and usage.',
+    cover: 'ATS-9009X2 4示意圖-01.jpg',
+    images: ['ATS-9009X2 4示意圖-01.jpg'],
+    type: 'image',
+  },
+  {
+    id: 'stella-gift-packaging',
+    title: 'Stella Gift Packaging',
+    year: '2024',
+    category: 'Packaging',
+    client: '—',
+    description:
+      'Animated scene photography for a luxury PR gift set. Motion and composition designed to showcase material quality and gift experience.',
+    cover: '史黛拉盒商品情境gif_公關禮.gif',
+    images: ['史黛拉盒商品情境gif_公關禮.gif'],
+    type: 'image',
+  },
+  {
+    id: 'packaging-reveal',
+    title: 'Packaging Reveal',
+    year: '2024',
+    category: 'Packaging',
+    client: '—',
+    description:
+      'Unboxing detail photography documenting the reveal sequence. Interior surface, texture, and structure conceived as part of the overall experience.',
+    cover: '開蓋-02.jpg',
+    images: ['開蓋-02.jpg'],
+    type: 'image',
+  },
+  {
+    id: 'carrefour-arts-magazine',
+    title: 'Carrefour Arts Festival — Editorial',
+    year: '2024',
+    category: 'Editorial',
+    client: 'Carrefour',
+    description:
+      'Magazine spread designed for the Carrefour Cultural Arts Festival. Grid-based layout with considered typographic rhythm across spreads.',
+    cover: '家樂福文化藝術季雜誌稿2.jpg',
+    images: ['家樂福文化藝術季雜誌稿2.jpg'],
+    type: 'image',
+  },
+  {
+    id: 'dragon-boat-festival-2025',
+    title: 'Dragon Boat Festival Card 2025',
+    year: '2025',
+    category: 'Motion',
+    client: '—',
+    description:
+      'Animated digital greeting card for the Dragon Boat Festival. Motion choreography references the rhythm of drumming and the sweep of the boat.',
+    cover: '2025 端午賀卡-中文版.mp4',
+    images: ['2025 端午賀卡-中文版.mp4'],
+    type: 'video',
+  },
+  {
+    id: 'new-year-greeting',
+    title: 'New Year Greeting',
+    year: '2024',
+    category: 'Motion',
+    client: '—',
+    description:
+      'Animated New Year greeting. Restrained colour palette and deliberate timing give the piece a contemplative quality appropriate to the season.',
+    cover: '新年-D版.mp4',
+    images: ['新年-D版.mp4'],
+    type: 'video',
+  },
+];
+
+export const categories = ['All', 'Brand', 'Packaging', 'Editorial', 'Motion'];
