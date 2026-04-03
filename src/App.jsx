@@ -10,6 +10,7 @@ import ClickSpark from './components/ClickSpark';
 function Layout() {
   const location = useLocation();
   const isHome = location.pathname === '/';
+  const isAbout = location.pathname === '/about';
   const isWorkDetail = /^\/works\/.+/.test(location.pathname);
 
   return (
@@ -23,7 +24,7 @@ function Layout() {
           <Route path="/about" element={<About />} />
         </Routes>
       </main>
-      {!isHome && <Footer />}
+      {!isHome && !isAbout && <Footer />}
     </div>
   );
 }

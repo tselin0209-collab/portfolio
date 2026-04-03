@@ -4,7 +4,7 @@
   grid-template-columns: 220px 1fr;
   align-items: start;
   min-height: 100vh;
-  padding: 36px 40px 60px 0;
+  padding: 36px 0 80px 0;
 }
 
 /* ── Left sidebar ── */
@@ -73,7 +73,7 @@
 
 /* ── Right content ── */
 .content {
-  padding-top: 4px;
+  padding-right: 0;
 }
 
 /* Filter */
@@ -81,7 +81,7 @@
   display: flex;
   align-items: center;
   gap: 0;
-  margin-bottom: 32px;
+  padding: 4px 0 32px 0;
 }
 
 .filterGroup {
@@ -115,80 +115,82 @@
   color: var(--c-black);
 }
 
-/* Grid */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 48px 32px;
+/* ── Work list — single column full-width ── */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
-.card {
+.item {
   display: block;
+  position: relative;
 }
 
-.imgWrap {
+.mediaWrap {
+  width: 100%;
   overflow: hidden;
   background: var(--c-grey-light);
-  margin-bottom: 14px;
 }
 
-.img {
+.media {
   width: 100%;
   height: auto;
   display: block;
-  transition: transform 0.4s ease;
+  transition: opacity 0.3s ease;
 }
 
-.card:hover .img {
-  transform: scale(1.02);
+.item:hover .media {
+  opacity: 0.88;
 }
 
-.meta {
+/* Caption — appears below each image on hover via CSS, always visible as minimal text */
+.caption {
   display: flex;
-  align-items: baseline;
   justify-content: space-between;
-  gap: 12px;
+  align-items: baseline;
+  padding: 10px 0 20px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
 }
 
-.cardTitle {
+.item:hover .caption {
+  opacity: 1;
+}
+
+.captionTitle {
   font-family: var(--font-latin);
-  font-size: var(--fs-sm);
-  font-weight: 400;
-  color: var(--c-grey-dark);
-  transition: color 0.2s ease;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.card:hover .cardTitle {
+  font-size: var(--fs-xs);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
   color: var(--c-black);
 }
 
-.cardCategory {
+.captionCategory {
   font-family: var(--font-latin);
   font-size: var(--fs-xs);
-  color: var(--c-grey-mid);
   letter-spacing: 0.10em;
   text-transform: uppercase;
-  white-space: nowrap;
-  flex-shrink: 0;
+  color: var(--c-grey-mid);
 }
 
 @media (max-width: 768px) {
   .works {
     grid-template-columns: 1fr;
-    padding: 24px 20px 60px;
+    padding: 24px 0 60px;
   }
 
   .sidebar {
     position: static;
-    padding-left: 0;
-    margin-bottom: 40px;
+    padding: 0 20px;
+    margin-bottom: 36px;
   }
 
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 36px;
+  .content {
+    padding: 0 20px;
+  }
+
+  .caption {
+    opacity: 1;
   }
 }

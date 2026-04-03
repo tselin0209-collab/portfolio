@@ -52,14 +52,14 @@ export default function Works() {
           ))}
         </div>
 
-        <div className={styles.grid}>
+        <div className={styles.list}>
           {filtered.map((work) => (
-            <Link to={`/works/${work.id}`} key={work.id} className={styles.card}>
-              <div className={styles.imgWrap}>
+            <Link to={`/works/${work.id}`} key={work.id} className={styles.item}>
+              <div className={styles.mediaWrap}>
                 {work.type === 'video' ? (
                   <video
                     src={`/works/${encodeURIComponent(work.cover)}`}
-                    className={styles.img}
+                    className={styles.media}
                     muted
                     playsInline
                     preload="metadata"
@@ -68,13 +68,13 @@ export default function Works() {
                   <img
                     src={`/works/${encodeURIComponent(work.cover)}`}
                     alt={work.title}
-                    className={styles.img}
+                    className={styles.media}
                   />
                 )}
               </div>
-              <div className={styles.meta}>
-                <span className={styles.cardTitle}>{work.title}</span>
-                <span className={styles.cardCategory}>{work.category}</span>
+              <div className={styles.caption}>
+                <span className={styles.captionTitle}>{work.title}</span>
+                <span className={styles.captionCategory}>{work.category}</span>
               </div>
             </Link>
           ))}

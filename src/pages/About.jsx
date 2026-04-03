@@ -1,45 +1,43 @@
-import { NavLink } from 'react-router-dom';
+import { useRef } from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import VariableProximity from '../components/VariableProximity';
 import styles from './About.module.css';
 
 export default function About() {
+  const textContainerRef = useRef(null);
+
   return (
     <div className={styles.about}>
       <aside className={styles.sidebar}>
-        <NavLink to="/" className={styles.sidebarName}>TSELIN LO</NavLink>
-        <span className={styles.sidebarRole}>Graphic Designer</span>
-        <span className={styles.sidebarLocation}>Taiwan</span>
-        <nav className={styles.sidebarNav}>
-          <NavLink
-            to="/works"
-            className={({ isActive }) =>
-              `${styles.sidebarLink} ${isActive ? styles.sidebarActive : ''}`
-            }
-          >
-            Works
-          </NavLink>
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              `${styles.sidebarLink} ${isActive ? styles.sidebarActive : ''}`
-            }
-          >
-            About
-          </NavLink>
-        </nav>
+        <Link to="/" className={styles.backArrow}>←</Link>
       </aside>
 
       <div className={styles.content}>
         <div className={styles.layout}>
           {/* Left column */}
           <div className={styles.left}>
-            <h1 className={styles.name}>TSELIN LO</h1>
-            <p className={styles.bio}>
-              Tse-Lin Lo (羅則林), graphic designer based in Taiwan specializing
-              in Branding, Packaging &amp; Digital Experience.
-            </p>
-            <a href="mailto:tselin0209@gmail.com" className={styles.email}>
-              tselin0209@gmail.com
-            </a>
+            <div ref={textContainerRef} style={{ position: 'relative' }}>
+              <h1 className={styles.name}>
+                <VariableProximity
+                  label="TSELIN LO"
+                  fromFontVariationSettings="'wght' 400"
+                  toFontVariationSettings="'wght' 700"
+                  containerRef={textContainerRef}
+                  radius={120}
+                  falloff="linear"
+                />
+              </h1>
+              <p className={styles.bio}>
+                <VariableProximity
+                  label="Tse-Lin Lo (羅則林), graphic designer based in Taiwan specializing in Branding, Packaging & Digital Experience."
+                  fromFontVariationSettings="'wght' 400"
+                  toFontVariationSettings="'wght' 700"
+                  containerRef={textContainerRef}
+                  radius={90}
+                  falloff="linear"
+                />
+              </p>
+            </div>
           </div>
 
           {/* Right column */}
@@ -70,7 +68,16 @@ export default function About() {
             </div>
           </div>
         </div>
+
       </div>
+      <video
+        src="/bg.mp4"
+        className={styles.bgVideo}
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
     </div>
   );
 }
