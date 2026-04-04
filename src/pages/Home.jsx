@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { works } from '../data/works';
+import { slides } from '../data/works';
+import VariableProximity from '../components/VariableProximity';
 import styles from './Home.module.css';
 
 const SLIDE_DURATION = 8000;
 const FADE_DURATION  = 2000;
 
-const slides = works.map((w) => ({ src: w.cover, type: w.type }));
 
 export default function Home() {
   const [slotA, setSlotA] = useState({ src: slides[0].src, type: slides[0].type });
@@ -14,6 +14,7 @@ export default function Home() {
   const [fading, setFading] = useState(false);
   const indexRef = useRef(0);
   const timerRef = useRef(null);
+  const textRef = useRef(null);
 
   useEffect(() => {
     timerRef.current = setTimeout(() => {
@@ -67,13 +68,39 @@ export default function Home() {
       <div className={styles.overlay} />
 
       {/* Text — top left, always white */}
-      <div className={styles.textBlock}>
-        <p className={styles.name}>TSELIN LO</p>
+      <div className={styles.textBlock} ref={textRef} style={{ position: 'relative' }}>
+        <p className={styles.name}>
+          <VariableProximity
+            label="TSELIN LO"
+            fromFontVariationSettings="'wght' 400"
+            toFontVariationSettings="'wght' 700"
+            containerRef={textRef}
+            radius={90}
+            falloff="linear"
+          />
+        </p>
         <p className={styles.role}>Graphic Designer</p>
-        <p className={styles.location}>Taiwan</p>
         <nav className={styles.nav}>
-          <Link to="/works" className={styles.navLink}>Works</Link>
-          <Link to="/about" className={styles.navLink}>About</Link>
+          <Link to="/works" className={styles.navLink}>
+            <VariableProximity
+              label="Works"
+              fromFontVariationSettings="'wght' 400"
+              toFontVariationSettings="'wght' 700"
+              containerRef={textRef}
+              radius={90}
+              falloff="linear"
+            />
+          </Link>
+          <Link to="/about" className={styles.navLink}>
+            <VariableProximity
+              label="About"
+              fromFontVariationSettings="'wght' 400"
+              toFontVariationSettings="'wght' 700"
+              containerRef={textRef}
+              radius={90}
+              falloff="linear"
+            />
+          </Link>
         </nav>
       </div>
     </div>

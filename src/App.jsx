@@ -7,6 +7,24 @@ import WorkDetail from './pages/WorkDetail';
 import About from './pages/About';
 import ClickSpark from './components/ClickSpark';
 
+function SparkWrapper() {
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+  const sparkColor = isHome ? '#fff' : '#aaaaaa';
+
+  return (
+    <ClickSpark
+      sparkColor={sparkColor}
+      sparkSize={10}
+      sparkRadius={15}
+      sparkCount={8}
+      duration={400}
+    >
+      <Layout />
+    </ClickSpark>
+  );
+}
+
 function Layout() {
   const location = useLocation();
   const isHome = location.pathname === '/';
@@ -32,15 +50,7 @@ function Layout() {
 export default function App() {
   return (
     <BrowserRouter>
-      <ClickSpark
-        sparkColor='#fff'
-        sparkSize={10}
-        sparkRadius={15}
-        sparkCount={8}
-        duration={400}
-      >
-        <Layout />
-      </ClickSpark>
+      <SparkWrapper />
     </BrowserRouter>
   );
 }

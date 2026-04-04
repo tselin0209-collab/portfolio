@@ -1,29 +1,58 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { works, categories } from '../data/works';
+import VariableProximity from '../components/VariableProximity';
 import styles from './Works.module.css';
 
 export default function Works() {
   const [active, setActive] = useState('All');
+  const [menuOpen, setMenuOpen] = useState(true);
+  const sidebarRef = useRef(null);
 
   const filtered =
     active === 'All' ? works : works.filter((w) => w.category === active);
 
+  const handleCategory = (cat) => {
+    setActive(cat);
+    setMenuOpen(false);
+  };
+
   return (
     <div className={styles.works}>
-      <aside className={styles.sidebar}>
-        <NavLink to="/" className={styles.sidebarName}>TSELIN LO</NavLink>
+      <aside className={styles.sidebar} ref={sidebarRef} style={{ position: 'relative' }}>
+        <NavLink to="/" className={styles.sidebarName}>
+          <VariableProximity
+            label="TSELIN LO"
+            fromFontVariationSettings="'wght' 400"
+            toFontVariationSettings="'wght' 700"
+            containerRef={sidebarRef}
+            radius={90}
+            falloff="linear"
+          />
+        </NavLink>
         <span className={styles.sidebarRole}>Graphic Designer</span>
-        <span className={styles.sidebarLocation}>Taiwan</span>
         <nav className={styles.sidebarNav}>
-          <NavLink
-            to="/works"
-            className={({ isActive }) =>
-              `${styles.sidebarLink} ${isActive ? styles.sidebarActive : ''}`
-            }
-          >
-            Works
-          </NavLink>
+          <div className={styles.worksMenu}>
+            <button
+              className={`${styles.sidebarLink} ${styles.sidebarActive}`}
+              onClick={() => setMenuOpen((o) => !o)}
+            >
+              Works
+            </button>
+            {menuOpen && (
+              <div className={styles.dropdown}>
+                {categories.map((cat) => (
+                  <button
+                    key={cat}
+                    className={`${styles.dropdownItem} ${active === cat ? styles.dropdownActive : ''}`}
+                    onClick={() => handleCategory(cat)}
+                  >
+                    {cat}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
           <NavLink
             to="/about"
             className={({ isActive }) =>
@@ -36,29 +65,13 @@ export default function Works() {
       </aside>
 
       <div className={styles.content}>
-        <div className={styles.filterBar}>
-          {categories.map((cat, i) => (
-            <span key={cat} className={styles.filterGroup}>
-              <button
-                className={`${styles.filterBtn} ${active === cat ? styles.filterActive : ''}`}
-                onClick={() => setActive(cat)}
-              >
-                {cat}
-              </button>
-              {i < categories.length - 1 && (
-                <span className={styles.filterDot}>·</span>
-              )}
-            </span>
-          ))}
-        </div>
-
         <div className={styles.list}>
           {filtered.map((work) => (
             <Link to={`/works/${work.id}`} key={work.id} className={styles.item}>
               <div className={styles.mediaWrap}>
                 {work.type === 'video' ? (
                   <video
-                    src={`/works/${encodeURIComponent(work.cover)}`}
+                    src={`/works-list/${encodeURIComponent(work.cover)}`}
                     className={styles.media}
                     muted
                     playsInline
@@ -66,15 +79,11 @@ export default function Works() {
                   />
                 ) : (
                   <img
-                    src={`/works/${encodeURIComponent(work.cover)}`}
+                    src={`/works-list/${encodeURIComponent(work.cover)}`}
                     alt={work.title}
                     className={styles.media}
                   />
                 )}
-              </div>
-              <div className={styles.caption}>
-                <span className={styles.captionTitle}>{work.title}</span>
-                <span className={styles.captionCategory}>{work.category}</span>
               </div>
             </Link>
           ))}

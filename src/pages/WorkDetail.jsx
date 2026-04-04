@@ -2,8 +2,8 @@ import { useParams, Link } from 'react-router-dom';
 import { works } from '../data/works';
 import styles from './WorkDetail.module.css';
 
-function Media({ src, type, alt, className }) {
-  const url = `/works/${encodeURIComponent(src)}`;
+function Media({ src, type, alt, className, folder = 'works' }) {
+  const url = `/${folder}/${encodeURIComponent(src)}`;
   return type === 'video' ? (
     <video className={className} src={url} autoPlay muted loop playsInline controls />
   ) : (
@@ -35,7 +35,7 @@ export default function WorkDetail() {
       </div>
 
       <div className={styles.coverWrap}>
-        <Media src={work.cover} type={work.type} alt={work.title} className={styles.cover} />
+        <Media src={work.cover} type={work.type} alt={work.title} className={styles.cover} folder={work.coverPath || 'works'} />
       </div>
 
       <div className={styles.info}>
@@ -65,7 +65,7 @@ export default function WorkDetail() {
         <div className={styles.gallery}>
           {work.images.slice(1).map((img, i) => (
             <div key={i} className={styles.galleryItem}>
-              <Media src={img} type={work.type} alt={`${work.title} ${i + 2}`} className={styles.galleryImg} />
+              <Media src={img} type={work.type} alt={`${work.title} ${i + 2}`} className={styles.galleryImg} folder={work.imagesPath || 'works'} />
             </div>
           ))}
         </div>

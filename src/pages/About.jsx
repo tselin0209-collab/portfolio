@@ -1,10 +1,11 @@
 import { useRef } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import VariableProximity from '../components/VariableProximity';
 import styles from './About.module.css';
 
 export default function About() {
   const textContainerRef = useRef(null);
+  const rightRef = useRef(null);
 
   return (
     <div className={styles.about}>
@@ -28,40 +29,60 @@ export default function About() {
                 />
               </h1>
               <p className={styles.bio}>
-                <VariableProximity
-                  label="Tse-Lin Lo (羅則林), graphic designer based in Taiwan specializing in Branding, Packaging & Digital Experience."
-                  fromFontVariationSettings="'wght' 400"
-                  toFontVariationSettings="'wght' 700"
-                  containerRef={textContainerRef}
-                  radius={90}
-                  falloff="linear"
-                />
+                Tse-Lin Lo (羅則林), graphic designer based in Taiwan specializing in Branding, Packaging &amp; Motion Graphics.
               </p>
             </div>
           </div>
 
           {/* Right column */}
-          <div className={styles.right}>
+          <div className={styles.right} ref={rightRef} style={{ position: 'relative' }}>
             <div className={styles.section}>
-              <p className={styles.sectionLabel}>Specialisms</p>
+              <p className={styles.sectionLabel}>
+                <VariableProximity
+                  label="Specialisms"
+                  fromFontVariationSettings="'wght' 400"
+                  toFontVariationSettings="'wght' 700"
+                  containerRef={rightRef}
+                  radius={90}
+                  falloff="linear"
+                />
+              </p>
               <ul className={styles.list}>
                 <li>Branding</li>
                 <li>Packaging</li>
-                <li>Digital Experience</li>
+                <li>Motion Graphics</li>
               </ul>
             </div>
 
             <div className={styles.divider} />
 
             <div className={styles.section}>
-              <p className={styles.sectionLabel}>Based In</p>
+              <p className={styles.sectionLabel}>
+                <VariableProximity
+                  label="Based In"
+                  fromFontVariationSettings="'wght' 400"
+                  toFontVariationSettings="'wght' 700"
+                  containerRef={rightRef}
+                  radius={90}
+                  falloff="linear"
+                />
+              </p>
               <p className={styles.sectionValue}>Taiwan</p>
             </div>
 
             <div className={styles.divider} />
 
             <div className={styles.section}>
-              <p className={styles.sectionLabel}>Contact</p>
+              <p className={styles.sectionLabel}>
+                <VariableProximity
+                  label="Contact"
+                  fromFontVariationSettings="'wght' 400"
+                  toFontVariationSettings="'wght' 700"
+                  containerRef={rightRef}
+                  radius={90}
+                  falloff="linear"
+                />
+              </p>
               <a href="mailto:tselin0209@gmail.com" className={styles.contactLink}>
                 tselin0209@gmail.com
               </a>

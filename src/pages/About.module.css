@@ -103,8 +103,8 @@
 .sectionLabel {
   font-family: var(--font-latin);
   font-size: calc(var(--fs-1) * 1.5);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
   color: var(--c-grey-mid);
 }
 
@@ -119,21 +119,21 @@
   font-family: var(--font-latin);
   font-size: calc(var(--fs-1) * 1.5);
   color: var(--c-grey-dark);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
 }
 
 .sectionValue {
   font-family: var(--font-latin);
   font-size: calc(var(--fs-1) * 1.5);
   color: var(--c-grey-dark);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
 }
 
 .contactLink {
   font-family: var(--font-latin);
   font-size: calc(var(--fs-1) * 1.5);
   color: var(--c-grey-dark);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   transition: color 0.2s ease;
 }
 
