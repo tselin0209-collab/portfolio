@@ -43,6 +43,19 @@ export const works = [
     images: ['詩特莉-森林樂曲禮盒-1.jpg'],
     type: 'image',
   },
+  {
+    id: 'logo-50th-1',
+    title: '50th Anniversary Logo',
+    year: '2024',
+    category: 'Brand',
+    client: '—',
+    description:
+      'Anniversary logotype developed for a 50th year milestone. Mark balances heritage with a contemporary sensibility.',
+    cover: '50周年 LOGO - (o)-1.png',
+    hoverCover: '50周年 LOGO - (o)-2.png',
+    images: ['50周年 LOGO - (o)-1.png', '50周年 LOGO - (o)-2.png'],
+    type: 'image',
+  },
 ];
 
 export const categories = ['All', 'Brand', 'Packaging', 'Editorial', 'Digital', 'Motion'];
