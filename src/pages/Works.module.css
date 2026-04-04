@@ -192,6 +192,19 @@
   display: block;
 }
 
+.mediaWrapCentered {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.mediaCentered {
+  width: auto !important;
+  max-width: 100%;
+  display: block;
+  transform: translateX(200px);
+}
+
 .mediaSwap {
   position: relative;
 }

@@ -32,8 +32,27 @@ export default function ScrollReveal({
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const text = typeof children === 'string' ? children : '';
-  const words = text.split(' ');
+  // Block mode — non-string children (e.g. images): fade the whole element
+  if (typeof children !== 'string') {
+    const opacity = baseOpacity + (1 - baseOpacity) * progress;
+    const blur = enableBlur ? blurStrength * (1 - progress) : 0;
+    return (
+      <span
+        ref={ref}
+        style={{
+          display: 'block',
+          opacity,
+          filter: blur > 0 ? `blur(${blur.toFixed(2)}px)` : 'none',
+          willChange: 'opacity, filter',
+        }}
+      >
+        {children}
+      </span>
+    );
+  }
+
+  // Text mode — word-by-word reveal
+  const words = children.split(' ');
 
   return (
     <span ref={ref} style={{ display: 'block' }}>

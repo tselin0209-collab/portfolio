@@ -15,10 +15,11 @@ function hasSeriesSuffix(cover) {
   return /-\d+\.[^.]+$/.test(cover);
 }
 
-// Show info if: first in a series OR no series suffix (standalone image)
-function shouldShowInfo(cover) {
-  if (!hasSeriesSuffix(cover)) return true;
-  return isFirstInSeries(cover);
+// Show info if: first in a series OR no series suffix (standalone image) OR explicit override
+function shouldShowInfo(work) {
+  if (work.showInfo) return true;
+  if (!hasSeriesSuffix(work.cover)) return true;
+  return isFirstInSeries(work.cover);
 }
 
 export default function Works() {
@@ -84,7 +85,7 @@ export default function Works() {
       <div className={styles.content}>
         <div className={styles.list}>
           {filtered.map((work) => {
-            const showInfo = shouldShowInfo(work.cover);
+            const showInfo = shouldShowInfo(work);
             return (
               <div key={work.id} className={styles.item}>
                 {showInfo && (
@@ -119,7 +120,8 @@ export default function Works() {
                 )}
                 {!showInfo && <div className={styles.infoColEmpty} />}
 
-                <Link to={`/works/${work.id}`} className={`${styles.mediaWrap} ${work.hoverCover ? styles.mediaSwap : ''}`}>
+                <ScrollReveal baseOpacity={0} enableBlur={false}>
+                <Link to={`/works/${work.id}`} className={`${styles.mediaWrap} ${work.hoverCover ? styles.mediaSwap : ''} ${work.centered ? styles.mediaWrapCentered : ''}`}>
                   {work.type === 'video' ? (
                     <video
                       src={`/works-list/${encodeURIComponent(work.cover)}`}
@@ -133,7 +135,7 @@ export default function Works() {
                       <img
                         src={`/works-list/${encodeURIComponent(work.cover)}`}
                         alt={work.title}
-                        className={`${styles.media} ${styles.mediaBase}`}
+                        className={`${styles.media} ${styles.mediaBase} ${work.centered ? styles.mediaCentered : ''}`}
                       />
                       {work.hoverCover && (
                         <img
@@ -145,6 +147,7 @@ export default function Works() {
                     </>
                   )}
                 </Link>
+                </ScrollReveal>
               </div>
             );
           })}

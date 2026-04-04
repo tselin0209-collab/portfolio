@@ -7,7 +7,7 @@ export const works = [
     client: '詩特莉',
     description: 'Gift packaging design for Stella. Refined structure and surface treatment conceived to elevate the unboxing experience.',
     cover: '詩特莉-官網獨家禮盒-1.png',
-    images: ['詩特莉-官網獨家禮盒-1.png'],
+    images: ['詩特莉-官網獨家禮盒-1.png', '詩特莉-官網獨家禮盒-2.png'],
     type: 'image',
   },
   {
@@ -31,6 +31,7 @@ export const works = [
     cover: '詩特莉-官網獨家禮盒-3.gif',
     images: ['詩特莉-官網獨家禮盒-3.gif'],
     type: 'image',
+    centered: true,
   },
   {
     id: 'stella-forest-1',
@@ -54,6 +55,19 @@ export const works = [
     cover: '50周年 LOGO - (o)-1.png',
     hoverCover: '50周年 LOGO - (o)-2.png',
     images: ['50周年 LOGO - (o)-1.png', '50周年 LOGO - (o)-2.png'],
+    type: 'image',
+  },
+  {
+    id: 'logo-50th-3',
+    title: '50th Anniversary Logo III',
+    year: '2024',
+    category: 'Brand',
+    client: '—',
+    description:
+      'Anniversary logotype developed for a 50th year milestone. Mark balances heritage with a contemporary sensibility.',
+    cover: '50周年 LOGO - (o)-3.png',
+    hoverCover: '50周年 LOGO - (o)-4.png',
+    images: ['50周年 LOGO - (o)-3.png', '50周年 LOGO - (o)-4.png'],
     type: 'image',
   },
 ];
