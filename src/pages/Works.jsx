@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { works, categories } from '../data/works';
 import VariableProximity from '../components/VariableProximity';
 import ScrollReveal from '../components/ScrollReveal';
+import TextType from '../components/TextType';
 import styles from './Works.module.css';
 
 // Detect if this cover is the first in a named series (e.g. "name-1.jpg")
@@ -91,9 +92,7 @@ export default function Works() {
                 {showInfo && (
                   <div className={styles.infoCol}>
                     <p className={styles.infoTitle}>
-                      <ScrollReveal baseOpacity={0.15} enableBlur blurStrength={3}>
-                        {work.title}
-                      </ScrollReveal>
+                      <TextType texts={[work.title]} typingSpeed={75} showCursor cursorCharacter="_" pauseDuration={1500} />
                     </p>
                     <div className={styles.infoMetaTable}>
                       <div className={styles.infoMetaRow}>
@@ -112,9 +111,7 @@ export default function Works() {
                       )}
                     </div>
                     <p className={styles.infoDesc}>
-                      <ScrollReveal baseOpacity={0.15} enableBlur blurStrength={3}>
-                        {work.description}
-                      </ScrollReveal>
+                      <TextType texts={[work.description]} typingSpeed={30} showCursor cursorCharacter="_" pauseDuration={1500} />
                     </p>
                   </div>
                 )}
