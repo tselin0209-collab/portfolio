@@ -56,6 +56,17 @@ export const works = [
     type: 'image',
   },
   {
+    id: 'new-year-2026-2',
+    title: '2026 New Year Card II',
+    year: '2026',
+    category: 'Motion',
+    client: '—',
+    description: 'New Year greeting card design for 2026. Composition developed to convey warmth and celebration for the seasonal occasion.',
+    cover: '2026新年賀卡-2.gif',
+    images: ['2026新年賀卡-2.gif'],
+    type: 'image',
+  },
+  {
     id: 'logo-50th-1',
     title: '50th Anniversary Logo',
     year: '2024',
@@ -121,5 +132,5 @@ export const slides = [
   { src: '商品情境GIF-置中版.gif', type: 'image' },
   { src: '家樂福文化藝術季雜誌稿2.jpg', type: 'image' },
   { src: 'Adobe Express - 2025 端午賀卡-中文版.mp4', type: 'video' },
-  { src: '新年賀卡-網站resize.mp4', type: 'video' },
+  { src: '2026新年賀卡-2.gif', type: 'image' },
 ];
