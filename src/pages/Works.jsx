@@ -2,8 +2,8 @@ import { useState, useRef } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { works, categories } from '../data/works';
 import VariableProximity from '../components/VariableProximity';
-import ScrollReveal from '../components/ScrollReveal';
 import TextType from '../components/TextType';
+import FadeUp from '../components/FadeUp';
 import styles from './Works.module.css';
 
 // Detect if this cover is the first in a named series (e.g. "name-1.jpg")
@@ -117,12 +117,12 @@ export default function Works() {
                 )}
                 {!showInfo && <div className={styles.infoColEmpty} />}
 
-                <ScrollReveal baseOpacity={0} enableBlur={false}>
-                <Link to={`/works/${work.id}`} className={`${styles.mediaWrap} ${work.hoverCover ? styles.mediaSwap : ''} ${work.centered ? styles.mediaWrapCentered : ''}`}>
+                <FadeUp>
+                <Link to={`/works/${work.id}`} className={`${styles.mediaWrap} ${work.hoverCover ? styles.mediaSwap : ''}`}>
                   {work.type === 'video' ? (
                     <video
                       src={`/works-list/${encodeURIComponent(work.cover)}`}
-                      className={styles.media}
+                      className={`${styles.media} ${styles.mediaCentered}`}
                       muted
                       playsInline
                       preload="metadata"
@@ -132,7 +132,8 @@ export default function Works() {
                       <img
                         src={`/works-list/${encodeURIComponent(work.cover)}`}
                         alt={work.title}
-                        className={`${styles.media} ${styles.mediaBase} ${work.centered ? styles.mediaCentered : ''}`}
+                        className={`${styles.media} ${styles.mediaBase} ${work.cover.endsWith('.gif') ? styles.mediaCentered : ''}`}
+                        style={work.scale ? { transform: `scale(${work.scale})`, transformOrigin: 'center top' } : undefined}
                       />
                       {work.hoverCover && (
                         <img
@@ -144,7 +145,7 @@ export default function Works() {
                     </>
                   )}
                 </Link>
-                </ScrollReveal>
+                </FadeUp>
               </div>
             );
           })}

@@ -31,7 +31,7 @@ export const works = [
     cover: '詩特莉-官網獨家禮盒-3.gif',
     images: ['詩特莉-官網獨家禮盒-3.gif'],
     type: 'image',
-    centered: true,
+    scale: 0.85,
   },
   {
     id: 'stella-forest-1',
@@ -42,6 +42,17 @@ export const works = [
     description: 'Forest-themed gift packaging for Stella. Layered illustration and structural design developed to create a distinctive seasonal edition.',
     cover: '詩特莉-森林樂曲禮盒-1.jpg',
     images: ['詩特莉-森林樂曲禮盒-1.jpg'],
+    type: 'image',
+  },
+  {
+    id: 'new-year-2026-1',
+    title: '2026 New Year Card',
+    year: '2026',
+    category: 'Digital',
+    client: '—',
+    description: 'New Year greeting card design for 2026. Composition developed to convey warmth and celebration for the seasonal occasion.',
+    cover: '2026新年賀卡-1.png',
+    images: ['2026新年賀卡-1.png'],
     type: 'image',
   },
   {
@@ -58,6 +69,18 @@ export const works = [
     type: 'image',
   },
   {
+    id: 'logo-50th-5',
+    title: '50th Anniversary Logo V',
+    year: '2024',
+    category: 'Brand',
+    client: '—',
+    description:
+      'Anniversary logotype developed for a 50th year milestone. Mark balances heritage with a contemporary sensibility.',
+    cover: '50周年 LOGO - (o)-5.png',
+    images: ['50周年 LOGO - (o)-5.png'],
+    type: 'image',
+  },
+  {
     id: 'logo-50th-3',
     title: '50th Anniversary Logo III',
     year: '2024',
@@ -68,6 +91,17 @@ export const works = [
     cover: '50周年 LOGO - (o)-3.png',
     hoverCover: '50周年 LOGO - (o)-4.png',
     images: ['50周年 LOGO - (o)-3.png', '50周年 LOGO - (o)-4.png'],
+    type: 'image',
+  },
+  {
+    id: 'ats-909xc-1',
+    title: 'ATS-909XC',
+    year: '2024',
+    category: 'Packaging',
+    client: '—',
+    description: 'Product packaging concept for ATS-909XC. Visual language developed to communicate precision and technical character.',
+    cover: 'ATS-909XC-示意圖-1.png',
+    images: ['ATS-909XC-示意圖-1.png'],
     type: 'image',
   },
 ];
