@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-export default function FadeUp({ children, delay = 0 }) {
+export default function FadeUp({ children, delay = 0, className }) {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
 
@@ -23,6 +23,7 @@ export default function FadeUp({ children, delay = 0 }) {
   return (
     <span
       ref={ref}
+      className={className}
       style={{
         display: 'block',
         opacity: visible ? 1 : 0,

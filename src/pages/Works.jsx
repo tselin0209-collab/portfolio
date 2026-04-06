@@ -25,7 +25,7 @@ function shouldShowInfo(work) {
 
 export default function Works() {
   const [active, setActive] = useState('All');
-  const [menuOpen, setMenuOpen] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(() => window.innerWidth > 768);
   const sidebarRef = useRef(null);
 
   const filtered =
@@ -94,30 +94,32 @@ export default function Works() {
                     <p className={styles.infoTitle}>
                       <TextType texts={[work.title]} typingSpeed={75} showCursor cursorCharacter="_" pauseDuration={1500} />
                     </p>
-                    <div className={styles.infoMetaTable}>
-                      <div className={styles.infoMetaRow}>
-                        <span className={styles.infoMetaLabel}>Year</span>
-                        <span className={styles.infoMetaValue}>{work.year}</span>
-                      </div>
-                      <div className={styles.infoMetaRow}>
-                        <span className={styles.infoMetaLabel}>Category</span>
-                        <span className={styles.infoMetaValue}>{work.category}</span>
-                      </div>
-                      {work.client !== '—' && (
+                    <div className={styles.infoBody}>
+                      <div className={styles.infoMetaTable}>
                         <div className={styles.infoMetaRow}>
-                          <span className={styles.infoMetaLabel}>Client</span>
-                          <span className={styles.infoMetaValue}>{work.client}</span>
+                          <span className={styles.infoMetaLabel}>Year</span>
+                          <span className={styles.infoMetaValue}>{work.year}</span>
                         </div>
-                      )}
+                        <div className={styles.infoMetaRow}>
+                          <span className={styles.infoMetaLabel}>Category</span>
+                          <span className={styles.infoMetaValue}>{work.category}</span>
+                        </div>
+                        {work.client !== '—' && (
+                          <div className={styles.infoMetaRow}>
+                            <span className={styles.infoMetaLabel}>Client</span>
+                            <span className={styles.infoMetaValue}>{work.client}</span>
+                          </div>
+                        )}
+                      </div>
+                      <p className={styles.infoDesc}>
+                        <TextType texts={[work.description]} typingSpeed={30} showCursor cursorCharacter="_" pauseDuration={1500} />
+                      </p>
                     </div>
-                    <p className={styles.infoDesc}>
-                      <TextType texts={[work.description]} typingSpeed={30} showCursor cursorCharacter="_" pauseDuration={1500} />
-                    </p>
                   </div>
                 )}
                 {!showInfo && <div className={styles.infoColEmpty} />}
 
-                <FadeUp>
+                <FadeUp className={styles.fadeUpBlock}>
                 <Link to={`/works/${work.id}`} className={`${styles.mediaWrap} ${work.hoverCover ? styles.mediaSwap : ''}`}>
                   {work.type === 'video' ? (
                     <video
