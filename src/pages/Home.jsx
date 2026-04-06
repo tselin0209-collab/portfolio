@@ -4,7 +4,7 @@ import { slides } from '../data/works';
 import VariableProximity from '../components/VariableProximity';
 import styles from './Home.module.css';
 
-const SLIDE_DURATION = 8000;
+const SLIDE_DURATION = 6000;
 const FADE_DURATION  = 2000;
 
 

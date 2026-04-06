@@ -147,16 +147,12 @@
   background: var(--c-rule);
 }
 
-/* ── Background video ── */
+/* ── Background video in left column ── */
 .bgVideo {
   display: block;
-  grid-column: 1 / -1;
-  width: calc((100% - 60px) * 0.975);
+  width: 100%;
   height: auto;
-  margin: -160px 0 0 auto;
-  transform: translateX(40px);
-  position: relative;
-  z-index: -1;
+  margin-top: -60px;
 }
 
 @media (max-width: 768px) {

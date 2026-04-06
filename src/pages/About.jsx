@@ -32,6 +32,14 @@ export default function About() {
                 Tse-Lin Lo (羅則林), graphic designer based in Taiwan specializing in Branding, Packaging &amp; Motion Graphics.
               </p>
             </div>
+            <video
+              src="/bg.mp4"
+              className={styles.bgVideo}
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
           </div>
 
           {/* Right column */}
@@ -91,14 +99,6 @@ export default function About() {
         </div>
 
       </div>
-      <video
-        src="/bg.mp4"
-        className={styles.bgVideo}
-        autoPlay
-        muted
-        loop
-        playsInline
-      />
     </div>
   );
 }
