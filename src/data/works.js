@@ -5,7 +5,7 @@ export const works = [
     year: '2020',
     category: 'Packaging',
     client: '詩特莉',
-    description: 'Gift packaging design for Stella. Refined structure and surface treatment conceived to elevate the unboxing experience.',
+    description: '',
     cover: '詩特莉-官網獨家禮盒-1.png',
     images: ['詩特莉-官網獨家禮盒-1.png', '詩特莉-官網獨家禮盒-2.png'],
     type: 'image',

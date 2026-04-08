@@ -257,13 +257,13 @@
   .sidebar {
     grid-column: 1 / -1;
     position: static;
-    padding: 0 20px 0 48px;
+    padding: 0 24px;
     margin-bottom: 0;
   }
 
   .content {
     grid-column: 1 / -1;
-    padding: 0 20px 0 48px;
+    padding: 0 24px;
   }
 
   .item {
@@ -277,7 +277,7 @@
     width: 100%;
     padding-right: 0;
     padding-top: 160px;
-    padding-left: 24px;
+    padding-left: 0;
     order: -1;
   }
 
@@ -329,8 +329,7 @@
   }
 
   .infoDesc {
-    margin: 0;
-    padding-right: 48px;
+    display: none;
   }
 
   .mediaCentered {
