@@ -1,6 +1,4 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import Nav from './components/Nav';
-import Footer from './components/Footer';
 import Home from './pages/Home';
 import Works from './pages/Works';
 import WorkDetail from './pages/WorkDetail';
@@ -27,13 +25,9 @@ function SparkWrapper() {
 
 function Layout() {
   const location = useLocation();
-  const isHome = location.pathname === '/';
-  const isAbout = location.pathname === '/about';
-  const isWorkDetail = /^\/works\/.+/.test(location.pathname);
 
   return (
     <div className="page-layout">
-      {isWorkDetail && <Nav />}
       <main className="page-content">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -42,7 +36,6 @@ function Layout() {
           <Route path="/about" element={<About />} />
         </Routes>
       </main>
-      {!isHome && !isAbout && <Footer />}
     </div>
   );
 }

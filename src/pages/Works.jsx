@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { works, categories } from '../data/works';
 import VariableProximity from '../components/VariableProximity';
 import TextType from '../components/TextType';
@@ -72,14 +72,6 @@ export default function Works() {
               </div>
             )}
           </div>
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              `${styles.sidebarLink} ${isActive ? styles.sidebarActive : ''}`
-            }
-          >
-            About
-          </NavLink>
         </nav>
       </aside>
 
@@ -120,7 +112,7 @@ export default function Works() {
                 {!showInfo && <div className={styles.infoColEmpty} />}
 
                 <FadeUp className={styles.fadeUpBlock}>
-                <Link to={`/works/${work.id}`} className={`${styles.mediaWrap} ${work.hoverCover ? styles.mediaSwap : ''}`}>
+                <div className={`${styles.mediaWrap} ${work.hoverCover ? styles.mediaSwap : ''}`}>
                   {work.type === 'video' ? (
                     <video
                       src={`/works-list/${encodeURIComponent(work.cover)}`}
@@ -134,7 +126,7 @@ export default function Works() {
                       <img
                         src={`/works-list/${encodeURIComponent(work.cover)}`}
                         alt={work.title}
-                        className={`${styles.media} ${styles.mediaBase} ${work.cover.endsWith('.gif') ? styles.mediaCentered : ''}`}
+                        className={`${styles.media} ${styles.mediaBase} ${work.cover.endsWith('.gif') && !work.fullWidth ? styles.mediaCentered : ''} ${work.fullWidth ? styles.mediaFullWidth : ''}`}
                         style={work.scale ? { transform: `scale(${work.scale})`, transformOrigin: 'center top' } : undefined}
                       />
                       {work.hoverCover && (
@@ -146,7 +138,7 @@ export default function Works() {
                       )}
                     </>
                   )}
-                </Link>
+                </div>
                 </FadeUp>
               </div>
             );

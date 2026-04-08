@@ -91,17 +91,25 @@ export default function Home() {
               falloff="linear"
             />
           </Link>
-          <Link to="/about" className={styles.navLink}>
-            <VariableProximity
-              label="About"
-              fromFontVariationSettings="'wght' 400"
-              toFontVariationSettings="'wght' 700"
-              containerRef={textRef}
-              radius={90}
-              falloff="linear"
-            />
-          </Link>
         </nav>
+      </div>
+
+      {/* Bottom-left info block */}
+      <div className={styles.infoBlock}>
+        <div className={styles.infoSection}>
+          <span className={styles.infoLabel}>Specialisms</span>
+          <span className={styles.infoValue}>Branding</span>
+          <span className={styles.infoValue}>Packaging</span>
+          <span className={styles.infoValue}>Motion Graphics</span>
+        </div>
+        <div className={styles.infoSection}>
+          <span className={styles.infoLabel}>Based In</span>
+          <span className={styles.infoValue}>Taiwan</span>
+        </div>
+        <div className={styles.infoSection}>
+          <span className={styles.infoLabel}>Contact</span>
+          <a href="mailto:tselin0209@gmail.com" className={styles.infoValue}>tselin0209@gmail.com</a>
+        </div>
       </div>
     </div>
   );
